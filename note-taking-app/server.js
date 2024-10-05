@@ -10,6 +10,9 @@ app.use(express.json()); // For parsing application/json
 // Your routes here
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/notes', require('./routes/noteRoutes'));
+app.use('/', (req,res) => {
+  res.send('server is working')
+})
 
 // MongoDB connection
 mongoose.connect("mongodb+srv://Donny:SantanDon@cluster0.z1dod.mongodb.net/", {
